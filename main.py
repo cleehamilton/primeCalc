@@ -11,7 +11,7 @@ if verboseOutput == 1: ## echo the Settings
 
 
 from ast import Break
-import math #Don't need all of math change to "From import"
+from math import sqrt
 primeFile = "primes.txt" ## preloaded with "2\n"
 primeFileLocation = "primeCalc\\" + primeFile ## add relative path
 
@@ -120,7 +120,7 @@ def primeTest3(number): #test divisible by previous primes below SQRT True meani
     if verboseOutput == 1:
         print("Test 3")
         print("  Testing", number, "for division of previous primes below it's squareroot...")
-    squareRoot = math.sqrt(number)
+    squareRoot = sqrt(number)
     if verboseOutput == 1:
         print("  Square root of", number, "=", int(squareRoot))
     x = int(squareRoot)
