@@ -9,11 +9,12 @@ if verboseOutput == 1: ## echo the Settings
     print('Limit to run (number length) set to:', limit2Run)
     
 
-
+import os
 from ast import Break
 from math import sqrt
 primeFile = "primes.txt" ## preloaded with "2\n"
-primeFileLocation = "primeCalc\\" + primeFile ## add relative path
+new_path_base = __file__.rstrip(os.path.basename(__file__))
+primeFileLocation = f"{new_path_base}{primeFile}"
 
 def searchNextPrime(): ## Search for next prime
     number = GetLastNumber() #start with the last prime found
@@ -183,5 +184,6 @@ def writeToFile(method,fileName,data):
     ## Close file
     f.close()
 
-#run Prog
-searchNextPrime()  
+if __name__ == "__main__":  
+    #run Prog
+    searchNextPrime()  
